@@ -100,7 +100,7 @@ class MainTest {
         assertFalse(Main.containsSpecialCharacters("p1a2s3s4w5o6r7d8"));
     }
 
-    @RepeatedTest(20)
+    @RepeatedTest(200)
     void generateSecurePassword_shouldPassTests_onRandomPassword() {
         String password = Main.generateSecurePassword();
         assertTrue(Main.checkLength(password));

@@ -97,7 +97,7 @@ public class Main {
     public static String generateSecurePassword() {
         // Generate random number for length of the password, min 8 characters, max 24
         int length = (int) (Math.random() * 16) + 8;
-        ArrayList<Object> password = new ArrayList<>();
+        ArrayList<Character> password = new ArrayList<>();
         // Add one lower case letter, one upper case letter, one digit, and one special character
         password.add((char) ((int) (Math.random() * 26) + 97));
         password.add((char) ((int) (Math.random() * 26) + 65));
@@ -126,6 +126,10 @@ public class Main {
         Collections.shuffle(password);
 
         // Convert the collection to a string and return it
-        return String.valueOf(password);
+        StringBuilder sb = new StringBuilder();
+        for (Character c : password) {
+            sb.append(c);
+        }
+        return sb.toString();
     }
 }
